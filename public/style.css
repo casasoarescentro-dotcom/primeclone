@@ -1,0 +1,512 @@
+:root{--bg:#f3f6fb;--panel:#fff;--text:#172033;--muted:#697386;--line:#e5eaf1;--primary:#2563eb;--primary2:#1d4ed8;--soft:#eff6ff;--green:#059669;--red:#dc2626;--amber:#d97706;--nav:#0b1220;--nav2:#111c31;--shadow:0 8px 28px rgba(15,23,42,.06)}*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;font:14px Inter,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);letter-spacing:-.01em}button,input,select,textarea{font:inherit}.hidden{display:none!important}
+.login-wrap{min-height:100vh;display:grid;place-items:center;padding:32px;background:radial-gradient(circle at 10% 10%,#1d4ed8 0,transparent 32%),linear-gradient(135deg,#07101f,#101b31 60%,#172554)}.login-shell{width:min(1000px,96vw);min-height:590px;display:grid;grid-template-columns:1.15fr .85fr;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 40px 120px #0008}.login-hero{padding:64px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;background:linear-gradient(145deg,rgba(9,20,39,.86),rgba(30,64,175,.8)),linear-gradient(135deg,#0f172a,#2563eb)}.hero-mark,.logo{display:grid;place-items:center;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:900;box-shadow:0 8px 20px #2563eb45}.hero-mark{width:64px;height:64px;border-radius:18px;font-size:22px}.logo{width:44px;height:44px;border-radius:13px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;color:#93c5fd}.login-hero h1{font-size:44px;line-height:1.05;margin:18px 0}.login-hero p{font-size:17px;line-height:1.6;color:#dbeafe;max-width:480px}.hero-points{display:flex;gap:10px;flex-wrap:wrap}.hero-points span{padding:8px 11px;border:1px solid #ffffff30;background:#ffffff12;border-radius:99px;font-size:12px}.login-card{padding:64px 52px;display:flex;flex-direction:column;justify-content:center}.login-card h2{font-size:28px;margin:10px 0 4px}.login-card>p{color:var(--muted);margin:0 0 22px}.login-btn{margin-top:20px;padding:13px 16px;display:flex;justify-content:space-between}.login-foot{color:#98a2b3;text-align:center;margin-top:22px}.mobile-brand{display:none}
+label{display:block;font-size:12px;font-weight:700;color:#475467;margin:12px 0 6px}input,select,textarea{width:100%;border:1px solid #d7deea;border-radius:11px;padding:10px 12px;background:#fff;color:var(--text);outline:none;transition:.18s}input:focus,select:focus,textarea:focus{border-color:#60a5fa;box-shadow:0 0 0 4px #dbeafe}
+#shell{min-height:100vh;display:grid;grid-template-columns:260px 1fr}aside{background:linear-gradient(180deg,var(--nav),#0d1729);color:#fff;padding:22px 14px;position:sticky;top:0;height:100vh;overflow:auto;display:flex;flex-direction:column}.brand{display:flex;gap:11px;align-items:center;padding:0 8px 12px}.brand b,.brand small{display:block}.brand b{font-size:16px}.brand small{color:#8ea0bb;margin-top:3px;font-size:11px}.version-chip{margin:4px 8px 14px;padding:7px 10px;border-radius:8px;background:#ffffff09;color:#7fa6ff;font-size:10px;font-weight:800;letter-spacing:.1em}.nav-group{font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#60718d;padding:15px 12px 5px}nav button{width:100%;border:0;background:transparent;color:#b8c3d5;padding:9px 10px;border-radius:10px;text-align:left;margin:1px 0;cursor:pointer;display:flex;align-items:center;gap:10px;transition:.15s}nav button:hover{background:#ffffff08;color:#fff}nav button.active{background:linear-gradient(90deg,#2563eb,#1d4ed8);color:#fff;box-shadow:0 7px 18px #1d4ed83d}.nav-icon{width:25px;height:25px;display:grid;place-items:center;border-radius:7px;background:#ffffff0b;font-size:14px}nav button.active .nav-icon{background:#ffffff18}.aside-foot{margin-top:auto;border-top:1px solid #ffffff10;padding:16px 8px 0;display:flex;gap:9px;align-items:center}.aside-foot b,.aside-foot small{display:block}.aside-foot b{font-size:11px}.aside-foot small{font-size:9px;color:#71829e;margin-top:2px}.status-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px #22c55e18}
+main{min-width:0}header{min-height:82px;background:#ffffffdd;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:20}.page-head{display:flex;align-items:center;gap:10px}header h2{margin:0;font-size:21px;letter-spacing:-.03em}header small{color:var(--muted)}.headright{display:flex;gap:10px;align-items:center}.search{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;padding:0 11px;width:300px;background:#f8fafc}.search input{border:0;box-shadow:none;background:transparent}.search input:focus{box-shadow:none}.user-chip{font-size:11px;background:#f1f5f9;padding:9px 11px;border-radius:10px;color:#475569}.logout-btn{background:#fff}.iconbtn,.mobile{display:none}
+#app{padding:26px;max-width:1680px;margin:auto}.cards{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:15px;margin-bottom:20px}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.card{padding:19px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#dbeafe}.card small{color:var(--muted);display:block;margin-bottom:9px;font-weight:600}.card strong{font-size:24px;letter-spacing:-.04em}.panel{padding:20px;margin-bottom:20px}.panel h3{font-size:15px;margin-top:0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.toolbar,.row{display:flex;gap:10px;align-items:center}.toolbar{margin-bottom:15px}.toolbar h3{margin:0 auto 0 0}.field{flex:1;min-width:120px}.primary,.secondary,.danger-btn,.success-btn,button{border:1px solid var(--line);border-radius:10px;padding:9px 12px;cursor:pointer;background:#fff;transition:.15s;font-weight:600}.primary{background:linear-gradient(135deg,var(--primary),var(--primary2));border-color:var(--primary);color:#fff;box-shadow:0 5px 12px #2563eb20}.primary:hover{transform:translateY(-1px)}.secondary{background:#f8fafc}.danger-btn{background:#fff1f2;color:var(--red);border-color:#fecdd3}.success-btn{background:#ecfdf5;color:var(--green);border-color:#a7f3d0}.full{width:100%}.mini{padding:5px 8px;font-size:11px}.danger{color:var(--red)!important}.ok{color:var(--green)!important}.amber{color:var(--amber)!important}.muted{color:var(--muted)}.alert{padding:12px 13px;border-radius:11px;background:#f1f5f9;margin:9px 0;border:1px solid #e8edf4}.alert.red{background:#fff1f2;color:#be123c;border-color:#ffe4e6}.alert.green{background:#ecfdf5;color:#047857;border-color:#d1fae5}.alert.yellow{background:#fffbeb;color:#b45309;border-color:#fef3c7}.scroll{overflow:auto;border-radius:11px}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{padding:11px 10px;border-bottom:1px solid #edf0f5;text-align:left}th{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#7b8495;background:#f8fafc;position:sticky;top:0}tr:hover td{background:#fafcff}.pill{display:inline-block;padding:4px 8px;border-radius:99px;background:#f1f5f9;font-size:10px;font-weight:700}.sale-item{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.pdv{display:grid;grid-template-columns:1.65fr .8fr;gap:20px}.product-results{max-height:280px;overflow:auto;border:1px solid var(--line);border-radius:12px}.result{padding:11px;border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between}.result:hover{background:var(--soft)}.totalbox{background:linear-gradient(145deg,#0b1220,#172554);color:#fff;border-radius:17px;padding:20px;box-shadow:0 12px 30px #0f172a25}.totalbox .big{font-size:38px;font-weight:850;letter-spacing:-.05em}.payrow{display:grid;grid-template-columns:1fr 130px 36px;gap:7px;margin:7px 0}.modalbox{position:fixed;inset:0;background:#07101fb5;backdrop-filter:blur(4px);display:grid;place-items:center;z-index:60;padding:15px}.modalinner{background:#fff;padding:24px;border-radius:18px;width:min(900px,96vw);max-height:92vh;overflow:auto;box-shadow:0 30px 80px #0005}.modalinner h3{margin-top:0;font-size:19px}.formgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.span2{grid-column:span 2}.empty{padding:28px;text-align:center;color:var(--muted)}.bar{height:8px;background:#e8edf5;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#2563eb);border-radius:99px}.kpi{font-size:12px;color:var(--muted)}.loading{color:var(--muted);text-align:center;padding:36px}#toast{position:fixed;right:22px;bottom:22px;background:#0f172a;color:#fff;padding:13px 17px;border-radius:11px;opacity:0;transform:translateY(10px);transition:.2s;z-index:99;box-shadow:0 12px 35px #0003}#toast.show{opacity:1;transform:none}
+@media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}.pdv,.grid2,.grid3{grid-template-columns:1fr}.search{width:220px}.formgrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.login-wrap{padding:0;background:#fff}.login-shell{width:100%;min-height:100vh;display:block;border-radius:0}.login-hero{display:none}.login-card{min-height:100vh;padding:36px 24px}.mobile-brand{display:flex;align-items:center;gap:10px;margin-bottom:50px}#shell{grid-template-columns:1fr}aside{position:fixed;left:-270px;width:260px;z-index:50;transition:.2s}.navopen aside{left:0}.mobile{display:inline-block}header{padding:0 13px}.headright .search,#who{display:none}#app{padding:13px}.cards{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}.span2{grid-column:auto}}
+
+.checkline{display:flex;align-items:center;gap:9px;padding:10px 0;font-weight:600}.checkline input{width:auto}.dark-ui{--bg:#0b1220;--panel:#111827;--text:#e5e7eb;--muted:#94a3b8;--line:#263244}.dark-ui header{background:#111827ee}.dark-ui input,.dark-ui select,.dark-ui textarea,.dark-ui button{background:#172033;color:#e5e7eb;border-color:#334155}.dark-ui th{background:#172033;color:#94a3b8}.dark-ui tr:hover td{background:#141d2e}.dark-ui .user-chip{background:#172033;color:#cbd5e1}
+
+/* ConstruGest 2.3 */
+.v23-hero{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px;margin-bottom:18px;border-radius:18px;background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;box-shadow:0 12px 30px #0f172a20}.v23-hero h2{margin:5px 0;font-size:25px}.v23-hero p{margin:0;color:#cbd5e1}.cards6{grid-template-columns:repeat(6,minmax(135px,1fr))}.card .kpi{display:block;margin-top:7px}.pill.amber{background:#fffbeb;color:#b45309}.pill.danger{background:#fff1f2;color:#be123c}@media(max-width:1300px){.cards6{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.v23-hero{align-items:flex-start;flex-direction:column}.cards6{grid-template-columns:1fr 1fr}}
+
+/* ConstruGest 2.7 - PDV Profissional */
+.pdv-pro-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.pdv-pro-head h2{margin:3px 0 4px;font-size:25px}.pdv-status{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:800;letter-spacing:.08em;color:#047857;background:#ecfdf5;border:1px solid #d1fae5;padding:9px 12px;border-radius:99px}.pdv-pro{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(320px,.72fr);gap:18px}.pdv-work{padding:0;overflow:visible;min-height:610px}.pdv-search-wrap{position:relative;padding:18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}.pdv-search-wrap input{height:52px;font-size:16px;padding-left:45px;background:#f8fafc;border-width:2px}.pdv-search-icon{position:absolute;left:34px;z-index:2;font-size:24px;color:#64748b}.pdv-search-wrap kbd{position:absolute;right:32px}.pdv-results{position:absolute;z-index:15;margin:0 18px;width:calc(100% - 36px);max-width:850px;background:var(--panel);box-shadow:0 18px 45px #0f172a28}.pdv-cart-title{display:flex;justify-content:space-between;align-items:end;padding:16px 18px 9px;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted)}.pdv-cart-title b{display:block;color:var(--text);font-size:12px}.pdv-cart-title small{display:block;margin-top:3px}.pdv-cart{padding:0 10px 12px;max-height:520px;overflow:auto}.pdv-cart-row{display:grid;grid-template-columns:38px minmax(180px,1fr) 105px 132px 110px 32px;gap:10px;align-items:center;padding:12px 8px;border-bottom:1px solid var(--line);border-left:3px solid transparent;cursor:pointer;transition:.12s}.pdv-cart-row:hover{background:#f8fafc}.pdv-cart-row.selected{background:#eff6ff;border-left-color:#2563eb}.pdv-item-no{font-size:11px;font-weight:800;color:#94a3b8}.pdv-item-main b{display:block;font-size:13px}.pdv-item-main small{color:var(--muted)}.pdv-item-main em{font-style:normal;font-size:8px;font-weight:800;color:#1d4ed8;background:#dbeafe;padding:2px 5px;border-radius:5px}.pdv-unit{font-size:12px;color:#475569;text-align:right}.pdv-qty{display:grid;grid-template-columns:30px 1fr 30px;gap:3px}.pdv-qty button{padding:5px;border-radius:7px}.pdv-qty input{text-align:center;padding:6px 2px;border-radius:7px}.pdv-item-total{text-align:right;font-size:14px}.pdv-remove{border:0;background:transparent;color:#ef4444;font-size:20px;padding:4px}.pdv-empty{height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#94a3b8;gap:7px}.pdv-empty div{font-size:42px;opacity:.35}.pdv-empty b{color:#64748b}.pdv-summary{background:transparent;color:inherit;padding:0;position:static;height:auto;overflow:visible;display:block}.pdv-summary .panel{padding:16px;margin-bottom:12px}.pdv-section-title{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:850;letter-spacing:.08em;color:#64748b;margin-bottom:8px}.pdv-total-card{background:linear-gradient(145deg,#081426,#102a56);color:#fff;border-radius:18px;padding:20px;box-shadow:0 16px 38px #0f172a30}.pdv-line{display:flex;align-items:center;justify-content:space-between;padding:7px 0;color:#cbd5e1}.pdv-discount{display:flex;align-items:center;gap:5px;width:130px}.pdv-discount input{background:#ffffff12;border-color:#ffffff25;color:#fff;text-align:right;padding:7px}.pdv-grand{border-top:1px solid #ffffff1f;margin-top:10px;padding-top:17px}.pdv-grand small{display:block;color:#93c5fd;font-size:10px;font-weight:800;letter-spacing:.12em}.pdv-grand strong{display:block;font-size:42px;letter-spacing:-.05em;margin:3px 0 15px}.pdv-finish{width:100%;border:0;background:#22c55e;color:#052e16;padding:15px;border-radius:12px;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 8px 20px #22c55e2e}.pdv-finish:hover{filter:brightness(1.06);transform:translateY(-1px)}kbd{font-family:inherit;font-size:9px;font-weight:850;background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;border-bottom-width:2px;border-radius:5px;padding:2px 5px;white-space:nowrap}.pdv-finish kbd{background:#ffffff30;color:#fff;border-color:#ffffff30}.pdv-shortcuts{position:sticky;bottom:0;z-index:12;display:flex;gap:13px;align-items:center;flex-wrap:wrap;background:#0f172af2;color:#cbd5e1;padding:9px 13px;border-radius:12px;margin-top:4px;box-shadow:0 -5px 20px #0f172a18;font-size:10px}.pdv-shortcuts .strong{margin-left:auto;color:#fff;font-weight:800}.pdv-shortcuts kbd{background:#1e293b;color:#e2e8f0;border-color:#475569}.pdv-payrow{grid-template-columns:1fr 105px 34px}.dark-ui .pdv-cart-row:hover{background:#172033}.dark-ui .pdv-cart-row.selected{background:#172554}.dark-ui .pdv-search-wrap input{background:#172033}.dark-ui .pdv-item-main em{background:#1e3a8a;color:#dbeafe}@media(max-width:1200px){.pdv-pro{grid-template-columns:1fr}.pdv-cart-row{grid-template-columns:32px minmax(160px,1fr) 90px 120px 100px 30px}.pdv-shortcuts{position:static}}@media(max-width:760px){.pdv-cart-row{grid-template-columns:28px 1fr 100px 30px}.pdv-unit{display:none}.pdv-item-total{grid-column:3}.pdv-qty{grid-column:2}.pdv-pro-head{align-items:flex-start;gap:10px}.pdv-status{font-size:9px}.pdv-shortcuts{display:none}}
+
+/* ConstruGest 2.7.1 - PDV Avancado */
+.pdv-head-actions{display:flex;align-items:center;gap:8px}.pdv-actions-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}.pdv-actions-row button{font-size:11px}.pdv-change{margin-top:12px;padding:12px;border-radius:12px;background:#f0fdf4;border:1px solid #bbf7d0}.pdv-change label{margin-top:0;color:#166534}.pdv-change>div{display:flex;justify-content:space-between;align-items:center;margin-top:9px;color:#166534}.pdv-change strong{font-size:22px}.suspended-row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.suspended-row small{display:block;color:var(--muted);margin-top:4px}.calc-result{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.calc-result>div{padding:15px;border:1px solid var(--line);border-radius:12px;background:#f8fafc}.calc-result small,.calc-result strong{display:block}.calc-result strong{font-size:21px;margin-top:5px}.calc-result .highlight{background:#eff6ff;border-color:#bfdbfe}.dark-ui .pdv-change{background:#052e16;border-color:#166534}.dark-ui .pdv-change label,.dark-ui .pdv-change>div{color:#86efac}.dark-ui .calc-result>div{background:#172033}.dark-ui .calc-result .highlight{background:#172554}@media(max-width:760px){.pdv-head-actions{align-items:flex-end;flex-direction:column}.pdv-head-actions>button{display:none}.calc-result{grid-template-columns:1fr}.suspended-row{grid-template-columns:1fr auto}.suspended-row .danger-btn{grid-column:2}}
+
+
+/* ConstruGest 2.8.0 - PDV Caixa Rápido inspirado em terminais clássicos */
+.legacy-pdv{background:#eef2f7;border-radius:14px;padding:10px;color:#14213d;min-height:calc(100vh - 105px);display:flex;flex-direction:column;gap:9px}
+.legacy-top{display:flex;justify-content:space-between;align-items:center;padding:5px 10px}.legacy-top>div:first-child{display:flex;gap:14px;align-items:baseline}.legacy-top b{font-size:25px;color:#0b3f85}.legacy-top small{font-weight:700;color:#596579}.legacy-operator{text-align:right;font-size:13px}
+.legacy-searchbar{position:relative;background:#173f8f;border-radius:8px;padding:10px 12px;color:#fff;display:grid;grid-template-columns:1fr auto;gap:5px 18px;align-items:end}.legacy-searchbar label{grid-column:1/-1;font-weight:800}.legacy-searchbar input{height:45px;font-size:22px;border:0;border-radius:5px;padding:0 12px}.legacy-shortcuts-top{display:flex;flex-direction:column;font-size:12px;gap:2px;min-width:125px}.legacy-searchbar .pdv-results{top:78px;left:12px;right:160px;z-index:30}
+.legacy-main{display:grid;grid-template-columns:360px 1fr;gap:9px;flex:1;min-height:330px}.legacy-left{background:#fff;border:1px solid #d5dbe5;border-radius:7px;padding:10px;display:grid;grid-template-columns:150px 1fr;gap:12px}.legacy-product-image{background:linear-gradient(#f9fafc,#e6eaf0);border:1px solid #d9dee7;border-radius:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:12px;min-height:240px}.legacy-product-image .cart-symbol{font-size:58px;opacity:.45}.legacy-product-image b{margin-top:12px;font-size:14px}.legacy-product-image small{margin-top:5px}.legacy-fields{display:flex;flex-direction:column;gap:10px}.legacy-fields label{font-size:12px;font-weight:800}.legacy-fields input{width:100%;margin-top:4px;height:38px;text-align:right;font-size:19px;font-weight:800;background:#f8fafc;border:1px solid #c7cfdb;border-radius:4px}
+.legacy-items{background:#fff;border:1px solid #cfd6e1;border-radius:7px;overflow:auto}.legacy-items table{width:100%;border-collapse:collapse}.legacy-items th{position:sticky;top:0;background:#edf0f4;padding:9px 7px;border-bottom:1px solid #cfd6e1;text-align:left;font-size:12px}.legacy-items td{padding:8px 7px;border-bottom:1px solid #edf0f4;font-size:13px}.legacy-items td small{display:block;color:#758095}.legacy-items tr:hover td{background:#f4f8ff}.legacy-empty{text-align:center!important;color:#9aa3b2;padding:80px 10px!important}.legacy-del{border:0;background:#fce8e8;color:#b42318;border-radius:4px;font-size:18px}
+.legacy-client-row{display:grid;grid-template-columns:2fr .7fr auto auto;gap:8px;align-items:end;background:#fff;padding:7px 9px;border-radius:6px;border:1px solid #d7dde6}.legacy-client-row label{font-size:11px;font-weight:800}.legacy-client-row select,.legacy-client-row input{width:100%;height:34px;margin-top:3px}.legacy-client-row button{height:34px}
+.legacy-actions{display:grid;grid-template-columns:repeat(5,120px) 1fr;gap:7px}.legacy-actions>button{min-height:63px;background:#fff;border:1px solid #cfd6e1;border-radius:6px;font-size:12px;color:#14213d}.legacy-actions>button b{font-size:12px}.legacy-subtotal{background:#173f8f;color:#fff;border-radius:6px;display:flex;justify-content:space-between;align-items:center;padding:7px 20px}.legacy-subtotal span{font-size:17px}.legacy-subtotal strong{font-size:42px}
+.legacy-paybox{display:grid;grid-template-columns:1.2fr .8fr 280px;gap:8px;background:#fff;border:1px solid #d6dce5;border-radius:7px;padding:8px;align-items:center}.legacy-paybox #paymentRows{display:flex;gap:6px;flex-wrap:wrap}.legacy-paybox #paymentRows>div{margin:0}.legacy-finish{height:68px;background:#16803c!important;color:#fff!important;border:0!important;border-radius:7px!important;font-size:18px!important;font-weight:900!important}
+.legacy-cash{min-height:62px;border-radius:7px;padding:0 18px;display:flex;align-items:center;gap:12px;color:#fff}.legacy-cash.open{background:#173f8f}.legacy-cash.closed{background:#8b1e2d}.legacy-cash b{font-size:26px}.legacy-cash strong{margin-left:auto;font-size:28px}.legacy-status{display:flex;justify-content:space-between;padding:0 10px;font-size:11px;color:#596579}
+.dark-ui .legacy-pdv{background:#111827;color:#e5e7eb}.dark-ui .legacy-left,.dark-ui .legacy-items,.dark-ui .legacy-client-row,.dark-ui .legacy-paybox{background:#172033;border-color:#344054}.dark-ui .legacy-fields input,.dark-ui .legacy-items th{background:#202a3d;color:#fff}
+@media(max-width:1050px){.legacy-main{grid-template-columns:300px 1fr}.legacy-left{grid-template-columns:110px 1fr}.legacy-actions{grid-template-columns:repeat(5,90px) 1fr}.legacy-paybox{grid-template-columns:1fr 1fr}.legacy-finish{grid-column:1/-1}}
+@media(max-width:800px){.legacy-main{grid-template-columns:1fr}.legacy-left{display:none}.legacy-client-row{grid-template-columns:1fr 1fr}.legacy-actions{grid-template-columns:repeat(3,1fr)}.legacy-subtotal{grid-column:1/-1}.legacy-paybox{grid-template-columns:1fr}.legacy-shortcuts-top{display:none}.legacy-searchbar{grid-template-columns:1fr}.legacy-searchbar .pdv-results{right:12px}.legacy-status{flex-wrap:wrap;gap:6px}}
+
+
+/* ConstruGest 2.8.3 — Legibilidade da busca do PDV */
+.legacy-searchbar .pdv-results{
+  background:#ffffff;
+  border:1px solid #c8d2e1;
+  border-radius:0 0 8px 8px;
+  box-shadow:0 14px 30px rgba(15,23,42,.18);
+  max-height:300px;
+  overflow-y:auto;
+  color:#17233d;
+}
+.legacy-searchbar .pdv-results .result{
+  background:#ffffff;
+  color:#17233d !important;
+  border-bottom:1px solid #e3e8ef;
+  padding:12px 14px;
+  min-height:58px;
+}
+.legacy-searchbar .pdv-results .result:hover,
+.legacy-searchbar .pdv-results .result.active{
+  background:#eaf2ff !important;
+  color:#102a56 !important;
+}
+.legacy-searchbar .pdv-results .result b,
+.legacy-searchbar .pdv-results .result strong{
+  color:#102a56 !important;
+  font-size:14px;
+  font-weight:900;
+}
+.legacy-searchbar .pdv-results .result small,
+.legacy-searchbar .pdv-results .result span{
+  color:#526175 !important;
+}
+.legacy-searchbar .pdv-results .result .price{
+  color:#0b4ca3 !important;
+  font-weight:900;
+  font-size:14px;
+}
+.legacy-searchbar .pdv-results button,
+.legacy-searchbar .pdv-results [onclick]{
+  color:#17233d;
+}
+.dark-ui .legacy-searchbar .pdv-results{
+  background:#172033;
+  border-color:#3b4659;
+  color:#f3f4f6;
+}
+.dark-ui .legacy-searchbar .pdv-results .result{
+  background:#172033;
+  color:#f3f4f6 !important;
+  border-bottom-color:#344054;
+}
+.dark-ui .legacy-searchbar .pdv-results .result:hover,
+.dark-ui .legacy-searchbar .pdv-results .result.active{
+  background:#253858 !important;
+  color:#ffffff !important;
+}
+.dark-ui .legacy-searchbar .pdv-results .result b,
+.dark-ui .legacy-searchbar .pdv-results .result strong{
+  color:#ffffff !important;
+}
+.dark-ui .legacy-searchbar .pdv-results .result small,
+.dark-ui .legacy-searchbar .pdv-results .result span{
+  color:#cbd5e1 !important;
+}
+.dark-ui .legacy-searchbar .pdv-results .result .price{
+  color:#93c5fd !important;
+}
+
+/* ConstruGest 2.9.0 — integração completa do PDV Caixa Rápido */
+.legacy-items tbody tr.pdv-cart-row{cursor:pointer}
+.legacy-items tbody tr.pdv-cart-row.selected td{background:#dbeafe!important;color:#102a56}
+.legacy-items tbody tr.pdv-cart-row.selected td:first-child{box-shadow:inset 4px 0 0 #174ea6}
+.legacy-fields input:not([readonly]):not(:disabled){background:#fff;border-color:#8aa8d8}
+.legacy-fields input:not([readonly]):not(:disabled):focus{outline:3px solid rgba(23,78,166,.15);border-color:#174ea6}
+.dark-ui .legacy-items tbody tr.pdv-cart-row.selected td{background:#253858!important;color:#fff}
+
+/* ConstruGest 2.9.1 — preço manual e desconto percentual */
+.pdv-discount-info{min-width:120px;padding:8px 12px;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc}
+.pdv-discount-info small{display:block;color:#64748b}.pdv-discount-info b{font-size:18px}
+#pdvSelectedUnit:not(:disabled){font-weight:800;background:#fff7ed;border-color:#fb923c}
+#pdvSelectedUnit:focus{outline:3px solid rgba(251,146,60,.2)}
+.legacy-finish:disabled{opacity:.65;cursor:wait}
+
+/* ConstruGest 3.1.1 — Barra de ações PDV azul */
+.legacy-actions{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(110px,1fr));
+  gap:8px;
+  padding:10px;
+  background:linear-gradient(180deg,#1458b8 0%,#0d4ca8 52%,#0a4297 100%);
+  border:1px solid #0a4297;
+  border-radius:10px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 5px 14px rgba(15,60,140,.16);
+  overflow:hidden;
+}
+.legacy-actions>button{
+  min-height:68px;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.04));
+  border:1px solid rgba(147,197,253,.42);
+  border-radius:8px;
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+  text-shadow:0 1px 1px rgba(0,0,0,.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.legacy-actions>button:hover,
+.legacy-actions>button:focus{
+  background:rgba(255,255,255,.15);
+  border-color:rgba(255,255,255,.72);
+  color:#fff;
+  transform:none;
+}
+.legacy-actions>button b{font-size:13px;color:#fff}
+.legacy-subtotal{
+  grid-column:1/-1;
+  min-height:92px;
+  margin:0;
+  background:linear-gradient(90deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+  border:1px solid rgba(147,197,253,.34);
+  color:#fff;
+  border-radius:8px;
+  display:flex;
+  justify-content:flex-start;
+  gap:22px;
+  align-items:center;
+  padding:10px 24px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.legacy-subtotal:before{content:'🛒';font-size:38px;line-height:1;filter:grayscale(1) brightness(0) invert(1)}
+.legacy-subtotal span{font-size:24px;font-weight:800;padding-right:22px;border-right:2px solid rgba(255,255,255,.72)}
+.legacy-subtotal strong{font-size:48px;line-height:1;font-weight:900;letter-spacing:-.03em;color:#fff}
+.dark-ui .legacy-actions{background:linear-gradient(180deg,#1458b8,#0a4297)}
+.dark-ui .legacy-actions>button{background:rgba(255,255,255,.07);border-color:rgba(147,197,253,.4);color:#fff}
+@media(max-width:1050px){.legacy-actions{grid-template-columns:repeat(3,1fr)}.legacy-subtotal{grid-column:1/-1}}
+@media(max-width:800px){.legacy-actions{grid-template-columns:repeat(2,1fr)}.legacy-subtotal{grid-column:1/-1}.legacy-subtotal strong{font-size:38px}}
+
+/* ConstruGest 3.2.0 — PDV PRO */
+.pdv-counter-toggle{margin-top:6px;padding:5px 9px!important;border-radius:7px!important;font-size:10px!important;background:#174ea6!important;color:#fff!important;border-color:#4f83cc!important}
+.pdv-pay-modal h3{font-size:30px;margin:6px 0 18px}.pdv-pay-quick{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.pdv-pay-quick button{min-height:92px;font-size:25px;background:#f8fbff;border:2px solid #c9d9f1;color:#174ea6}.pdv-pay-quick button b{display:block;font-size:12px;margin-top:8px;color:#102a56}.pdv-pay-quick button:hover{background:#eaf3ff;border-color:#174ea6}.pdv-pay-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.pdv-pay-summary span{padding:14px;border:1px solid #d9e2ef;border-radius:10px;background:#f8fafc}.pdv-pay-summary b{display:block;font-size:20px;margin-top:4px}
+.pdv-counter-mode #shell{grid-template-columns:1fr}.pdv-counter-mode aside,.pdv-counter-mode header{display:none}.pdv-counter-mode #app{max-width:none;padding:8px}.pdv-counter-mode .legacy-pdv{min-height:calc(100vh - 16px)}
+.dark-ui .pdv-pay-quick button{background:#172033;color:#93c5fd;border-color:#334155}.dark-ui .pdv-pay-quick button b{color:#fff}.dark-ui .pdv-pay-summary span{background:#172033;border-color:#334155}
+@media(max-width:900px){.pdv-pay-quick{grid-template-columns:repeat(2,1fr)}.pdv-pay-summary{grid-template-columns:1fr}}
+
+
+/* ConstruGest 3.2.3 — Orçamentos Profissionais */
+.quote-page{display:flex;flex-direction:column;gap:14px}.quote-heading{display:flex;justify-content:space-between;align-items:center;padding:4px 2px}.quote-heading h2{margin:2px 0 3px;font-size:28px;color:#123f75}.quote-heading p{margin:0;color:#64748b}.quote-panel{background:#fff;border:1px solid #d8e2ef;border-radius:10px;box-shadow:0 2px 8px rgba(15,55,95,.06);overflow:hidden}.quote-customer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:12px;padding:16px;background:#fbfdff;border-bottom:1px solid #dce6f1}.quote-customer-grid .span2{grid-column:auto}.quote-add{display:grid;grid-template-columns:minmax(300px,3fr) .7fr 1fr .9fr auto;gap:12px;align-items:end;padding:14px 16px;background:#f5f9fe;border-bottom:1px solid #dce6f1}.quote-add > button{height:43px}.quote-table-wrap{overflow:auto;padding:10px 16px}.quote-table{width:100%;border-collapse:collapse}.quote-table th{background:#eaf2fb;color:#173f70;border:1px solid #d3dfec;padding:11px 10px;text-align:left;white-space:nowrap}.quote-table td{border:1px solid #e0e7ef;padding:10px;color:#1e3a5f}.quote-table tr:hover td{background:#f8fbff}.quote-bottom{display:grid;grid-template-columns:2.2fr 1fr;gap:22px;padding:14px 16px;border-top:1px solid #e2e8f0}.quote-bottom textarea{min-height:135px}.quote-totals{border:1px solid #d6e2ef;border-radius:8px;padding:12px 16px;background:#fbfdff}.quote-totals h3{margin:0 0 8px;color:#173f70}.quote-totals>div{display:flex;justify-content:space-between;padding:7px 0}.quote-grand{margin:7px -6px -3px;padding:14px 12px!important;background:#dceeff;border-radius:7px;color:#103d70;font-size:22px;align-items:center}.quote-grand strong{font-size:30px}.quote-footer{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-top:1px solid #e2e8f0;background:#fbfdff}.quote-saved-tools{display:grid;grid-template-columns:1fr 220px;gap:10px;padding:16px;background:#f5f9fe;border-bottom:1px solid #dce6f1}.quote-status{display:inline-block;padding:5px 10px;border-radius:14px;font-size:12px;font-weight:800;background:#e5edf7;color:#244b77}.quote-status.aberto{background:#e5f0ff;color:#1555a5}.quote-status.convertido{background:#e1f3ea;color:#216344}.quote-status.vencido{background:#eef1f5;color:#5d6875}.dark-ui .quote-panel,.dark-ui .quote-totals{background:#111827;border-color:#334155}.dark-ui .quote-customer-grid,.dark-ui .quote-add,.dark-ui .quote-footer,.dark-ui .quote-saved-tools{background:#172033;border-color:#334155}.dark-ui .quote-heading h2,.dark-ui .quote-totals h3{color:#bfdbfe}.dark-ui .quote-table th{background:#1e3a5f;color:#e5efff;border-color:#334155}.dark-ui .quote-table td{color:#e2e8f0;border-color:#334155}.dark-ui .quote-table tr:hover td{background:#172033}.dark-ui .quote-grand{background:#1e3a5f;color:#fff}
+@media(max-width:1200px){.quote-customer-grid{grid-template-columns:repeat(3,1fr)}.quote-add{grid-template-columns:2fr 1fr 1fr}.quote-bottom{grid-template-columns:1fr}.quote-saved-tools{grid-template-columns:1fr}}
+@media(max-width:760px){.quote-customer-grid,.quote-add{grid-template-columns:1fr}.quote-heading,.quote-footer{align-items:stretch;gap:10px;flex-direction:column}.quote-grand strong{font-size:24px}}
+
+
+/* ConstruGest 3.2.6 — Backup e Segurança dos Dados */
+.backup-pro{border-top:4px solid #174ea6}.backup-status{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:10px;margin:16px 0}.backup-status>div{border:1px solid #dbe5f2;background:#f8fbff;border-radius:9px;padding:13px}.backup-status small{display:block;color:#64748b;margin-bottom:5px}.backup-status b{display:block;color:#123f91;font-size:14px;word-break:break-word}.backup-actions{display:flex;gap:8px;flex-wrap:wrap}.badge.green{background:#e9f8ef;color:#18703b;border:1px solid #bfe8cd;padding:7px 10px;border-radius:999px;font-weight:800;font-size:12px}@media(max-width:900px){.backup-status{grid-template-columns:1fr 1fr}}@media(max-width:560px){.backup-status{grid-template-columns:1fr}.backup-actions button{width:100%}}
+
+
+/* ConstruGest 3.2.7 — Orçamentos Salvos Profissional */
+.quote-saved-tools{grid-template-columns:minmax(260px,1fr) 190px 155px 155px}.quote-actions{display:flex;gap:5px;flex-wrap:wrap;min-width:430px}.quote-status.aprovado{background:#e7f6ec;color:#17653a}.quote-status.cancelado{background:#fdeaea;color:#9f2f2f}.quote-view-total{display:flex;justify-content:space-between;align-items:center;padding:14px;margin-top:12px;background:#eef5fd;border-radius:8px;color:#173f70}.quote-view-total strong{font-size:22px}.quote-modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}.pdv-quote-origin{margin-left:auto;background:#eaf3ff;color:#123f91;border:1px solid #9fc2ef;border-radius:8px;padding:7px 12px;font-weight:900;text-align:center}.pdv-quote-origin small{display:block;font-size:10px;font-weight:600}.dark-ui .quote-view-total{background:#1e3a5f;color:#fff}@media(max-width:1100px){.quote-saved-tools{grid-template-columns:1fr 1fr}.quote-actions{min-width:300px}}@media(max-width:700px){.quote-saved-tools{grid-template-columns:1fr}.quote-actions{min-width:240px}.quote-view-total{align-items:flex-start;gap:8px;flex-direction:column}}
+
+/* ConstruGest 3.2.9 — Financeiro Profissional */
+.fin-pro{display:flex;flex-direction:column;gap:14px}.fin-hero{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 22px;border-radius:14px;background:linear-gradient(135deg,#eef5ff,#fff);border:1px solid #cfe0f5}.fin-hero h2{margin:3px 0 5px;color:#103f76}.fin-hero p{margin:0;color:#60728a}.fin-kpis{display:grid;grid-template-columns:repeat(6,minmax(145px,1fr));gap:10px}.fin-kpi{background:#fff;border:1px solid #d8e3f1;border-radius:12px;padding:15px;box-shadow:0 3px 12px rgba(19,63,116,.05)}.fin-kpi small{display:block;color:#64748b;font-weight:900;font-size:11px;letter-spacing:.04em}.fin-kpi strong{display:block;color:#123f76;font-size:22px;margin:6px 0}.fin-kpi span{display:block;color:#718096;font-size:11px}.fin-kpi.receive{border-top:4px solid #15803d}.fin-kpi.pay,.fin-kpi.overdue{border-top:4px solid #dc2626}.fin-kpi.result{border-top:4px solid #2563eb}.fin-panel{background:#fff;border:1px solid #d7e2ef;border-radius:14px;overflow:hidden}.fin-tabs{display:flex;gap:6px;padding:12px 14px 0}.fin-tabs button{border:0;background:#edf3fb;color:#31577f;font-weight:800;border-radius:8px;padding:9px 13px}.fin-tabs button.active{background:#1458b8;color:#fff}.fin-filters{display:grid;grid-template-columns:minmax(280px,1fr) 170px 145px 145px auto;gap:8px;padding:12px 14px}.fin-table-wrap{overflow:auto;border-top:1px solid #e1e9f2}.fin-table{width:100%;min-width:1120px;border-collapse:collapse}.fin-table th{background:#edf4fc;color:#174574;font-size:11px;text-align:left;padding:11px 9px}.fin-table td{padding:10px 9px;border-top:1px solid #e5edf6;vertical-align:middle}.fin-table td small{display:block;color:#718096;margin-top:3px}.fin-row-overdue{background:#fff8f8}.fin-kind,.fin-status{display:inline-flex;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;white-space:nowrap}.fin-kind.receber{background:#e8f7ed;color:#16703a}.fin-kind.pagar,.fin-kind.despesa{background:#fff0f0;color:#b42318}.fin-status.pendente{background:#fff7df;color:#946200}.fin-status.vencido{background:#fee2e2;color:#b91c1c}.fin-status.pago{background:#dcfce7;color:#166534}.fin-status.cancelado{background:#e5e7eb;color:#4b5563}.fin-actions{display:flex;gap:5px;flex-wrap:wrap}
+@media(max-width:1250px){.fin-kpis{grid-template-columns:repeat(3,1fr)}.fin-filters{grid-template-columns:1fr 180px 150px 150px}.fin-filters button{grid-column:span 4}}
+@media(max-width:760px){.fin-hero{align-items:flex-start;flex-direction:column}.fin-kpis{grid-template-columns:repeat(2,1fr)}.fin-filters{grid-template-columns:1fr}.fin-filters button{grid-column:auto}.fin-tabs{overflow:auto}}
+
+/* ConstruGest 3.2.9.3 — Ações por ícones */
+.quote-actions{display:flex!important;align-items:center!important;gap:6px!important;flex-wrap:wrap!important;min-width:280px}
+.quote-icon-btn{width:36px!important;height:36px!important;min-width:36px!important;padding:0!important;border-radius:9px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;font-size:20px!important;font-weight:900!important;cursor:pointer!important;box-shadow:none!important}
+.quote-icon-btn:hover{transform:translateY(-1px)!important}
+.quote-icon-btn.view,.quote-icon-btn.edit{background:#eef6ff!important;border:1px solid #b9d8ff!important;color:#0b5bd3!important}
+.quote-icon-btn.print{background:#eaf9f0!important;border:1px solid #b7e8c9!important;color:#087538!important}
+.quote-icon-btn.duplicate{background:#f4efff!important;border:1px solid #d8c7ff!important;color:#6222c9!important}
+.quote-icon-btn.cancel{background:#fff0f1!important;border:1px solid #ffc3c8!important;color:#d31120!important}
+.quote-convert-btn{height:36px!important;padding:0 12px!important;border:0!important;border-radius:9px!important;background:#125be5!important;color:#fff!important;font-weight:900!important;display:inline-flex!important;align-items:center!important;gap:7px!important;white-space:nowrap!important;cursor:pointer!important}
+
+
+/* ConstruGest 3.3.0 — Identidade da Empresa */
+.company-logo-config{display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:center;margin-top:18px;padding:14px;border:1px solid #d8e3f1;border-radius:12px;background:#f8fbff}.company-logo-preview{height:110px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px dashed #b9c9dd;border-radius:10px;color:#718096}.company-logo-preview img{max-width:160px;max-height:90px;object-fit:contain}.company-logo-config small{display:block;color:#718096;margin:5px 0 10px}.pdv-brand{display:flex;align-items:center;gap:12px}.pdv-company-logo{width:64px;height:44px;object-fit:contain;background:#fff;border-radius:7px;padding:3px}.quote-brand{display:flex;align-items:center;gap:13px}.quote-company-logo{max-width:92px;max-height:58px;object-fit:contain}.report-brand-bar{display:flex;align-items:center;gap:14px}.report-brand-bar h3{margin:3px 0}.report-brand-bar button{margin-left:auto}.report-company-logo{max-width:92px;max-height:58px;object-fit:contain}.dark-ui .company-logo-config{background:#172033;border-color:#334155}.dark-ui .company-logo-preview{background:#111827;border-color:#475569}@media(max-width:700px){.company-logo-config{grid-template-columns:1fr}.report-brand-bar{align-items:flex-start;flex-wrap:wrap}.report-brand-bar button{margin-left:0}.pdv-company-logo{width:52px;height:38px}}
+
+
+/* ConstruGest 3.3.1 — Relatórios Gerenciais */
+.ger-pro{display:grid;gap:16px}.ger-hero{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:24px;border-radius:18px;background:linear-gradient(135deg,#0f3f8c,#1769d2);color:#fff}.ger-hero h2{margin:5px 0 6px}.ger-hero p{margin:0;opacity:.9}.ger-hero .eyebrow{color:#dbeafe}.ger-filters{display:flex;align-items:end;gap:10px;flex-wrap:wrap}.ger-filters>div{min-width:150px}.ger-filters label{display:block;margin-bottom:5px}.ger-period{font-size:13px;color:#64748b;margin:2px 0 10px}.ger-kpis .card strong{font-size:23px}.ger-bar-row{display:grid;grid-template-columns:86px 1fr 105px;gap:10px;align-items:center;margin:11px 0}.ger-mini-kpis{display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:10px;margin:12px 0}.ger-mini-kpis span{padding:12px;border:1px solid #e2e8f0;border-radius:12px;display:flex;flex-direction:column;gap:4px}.ger-mini-kpis b{font-size:18px}@media(max-width:760px){.ger-hero{align-items:flex-start;flex-direction:column}.ger-bar-row{grid-template-columns:72px 1fr 85px}.ger-filters>*{flex:1 1 140px}}
+
+/* ConstruGest 3.4.0 — Contas a Pagar e Receber */
+.fin-agenda{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.fin-agenda>div{background:#fff;border:1px solid #d8e3f1;border-radius:12px;padding:13px 15px}.fin-agenda small,.fin-agenda b,.fin-agenda span{display:block}.fin-agenda small{font-size:10px;font-weight:900;color:#64748b;letter-spacing:.04em}.fin-agenda b{font-size:17px;color:#123f76;margin:5px 0}.fin-agenda span{font-size:11px;color:#718096}.fin-status.recebido{background:#dcfce7;color:#166534}@media(max-width:900px){.fin-agenda{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.fin-agenda{grid-template-columns:1fr}}
+
+/* Porto Prime 4.1.0 - Ativação */
+.license-wrap{min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at top left,#173c77 0,#0b1c38 42%,#07101f 100%)}
+.license-wrap.hidden{display:none}.license-card{width:min(560px,100%);background:#fff;border-radius:22px;padding:34px;box-shadow:0 24px 70px #0007}.license-card h1{margin:12px 0 8px;color:#0b1c38}.license-card p{color:#64748b}.license-card textarea{width:100%;resize:vertical;font-family:ui-monospace,Consolas,monospace;font-size:12px}.license-machine{margin:22px 0;padding:18px;border:1px solid #d9e2ef;border-radius:14px;background:#f7f9fc}.license-machine small{display:block;color:#64748b;font-weight:700}.license-machine strong{display:block;margin:7px 0 12px;font:700 19px ui-monospace,Consolas,monospace;letter-spacing:1px;color:#174ea6;word-break:break-all}
+.trial-offer{margin:22px 0;padding:20px;border-radius:16px;background:linear-gradient(135deg,#eaf4ff,#f5fbff);border:1px solid #b9d8ff}.trial-offer>b,.trial-offer>span,.trial-offer>small{display:block}.trial-offer>b{color:#0c57ba;font-size:15px}.trial-offer>span{color:#52657f;font-size:12px;margin:5px 0 15px}.trial-offer>small{margin-top:10px;color:#64748b}.trial-offer button:disabled{opacity:.58;cursor:not-allowed}.license-divider{display:flex;align-items:center;gap:12px;color:#8b99af;font-size:10px;font-weight:800;letter-spacing:.08em}.license-divider:before,.license-divider:after{content:"";height:1px;background:#dce4ef;flex:1}.trial-banner{margin:14px 0 18px;padding:13px 15px;border:1px solid #9ec8ff;border-radius:12px;background:#eef6ff;color:#164b8f;display:grid;gap:3px}.trial-banner.hidden{display:none}.trial-banner b{font-size:11px;letter-spacing:.08em}.trial-banner span{font-size:12px}.trial-banner a{font-size:11px;font-weight:800;color:#1269d4;margin-top:3px}.dark-ui .trial-banner{background:#122c4e;border-color:#315f95;color:#bdddff}
+
+/* Porto Prime 4.1.3 — Otimização e Estabilidade */
+.commercial-login{padding:10px;background:linear-gradient(135deg,#07152d,#0a2b60)}
+.commercial-shell{width:min(1560px,98vw);min-height:min(940px,96vh);grid-template-columns:1.58fr 1fr;border-radius:30px;border:1px solid #3b82f655;box-shadow:0 40px 110px #0009}
+.commercial-hero{position:relative;overflow:hidden;padding:58px 56px;background:linear-gradient(90deg,rgba(5,24,58,.97) 0%,rgba(5,29,68,.88) 48%,rgba(5,29,68,.25) 100%),url('assets/erp-login-visual.jpg') right center/56% 100% no-repeat,#071d42}
+.commercial-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(4,19,46,.78));pointer-events:none}.commercial-hero>*{position:relative;z-index:1}
+.commercial-brand{display:flex;align-items:center;gap:18px}.commercial-logo{width:104px;height:86px;object-fit:cover;object-position:center;border-radius:20px}.commercial-brand strong{display:block;font-size:34px;letter-spacing:.01em}.commercial-brand strong em{font-style:normal;color:#2387ff}.commercial-brand small{display:block;margin-top:7px;color:#d7e6ff;letter-spacing:.24em;font-size:11px}
+.commercial-copy{max-width:540px;margin-top:72px}.commercial-copy h1{font-size:52px;line-height:1.05;margin:16px 0 20px}.commercial-copy h1 b{color:#1e8cff}.commercial-copy p{font-size:20px;max-width:470px}.commercial-modules{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}.commercial-modules span{display:flex;flex-direction:column;align-items:center;text-align:center}.commercial-modules i{width:70px;height:70px;display:grid;place-items:center;border-radius:16px;background:#063b80cc;border:1px solid #1685ff66;font-size:28px;font-style:normal;box-shadow:0 10px 28px #0004}.commercial-modules b{margin-top:10px;font-size:15px}.commercial-modules small{margin-top:5px;color:#b9c9e4;font-size:11px}.commercial-trust{display:flex;gap:28px;align-items:center;margin-top:auto;color:#e6efff;font-size:12px}
+.commercial-card{position:relative;padding:74px 62px 42px}.commercial-slogan{position:absolute;right:56px;top:42px;color:#8293b1;font-weight:800;font-size:11px;line-height:1.7;letter-spacing:.05em}.commercial-slogan i{display:block;width:52px;height:3px;background:#1477ff;margin-top:12px}.commercial-card .eyebrow{margin-top:76px;color:#2581ff}.commercial-card h2{font-size:32px;margin-top:12px}.commercial-card>p{font-size:15px}.login-input-wrap{position:relative}.login-input-wrap span{position:absolute;left:16px;top:50%;transform:translateY(-50%);z-index:2;color:#8090aa;font-size:17px}.login-input-wrap input{height:58px;padding-left:48px;border-radius:13px;font-size:15px}.commercial-card .login-btn{height:62px;border-radius:13px;font-size:17px;margin-top:24px;padding:0 20px;align-items:center}.commercial-footer{margin-top:auto;padding-top:56px;display:flex;justify-content:space-between;align-items:end;color:#8b99af;font-size:11px;line-height:1.6}.commercial-footer b{color:#3b75c9;font-weight:600;border-left:1px solid #d7deea;padding-left:30px}.commercial-card .mobile-brand img{width:50px;height:44px;object-fit:cover;border-radius:10px}
+.porto-support-login{margin-top:22px;padding:14px 16px;border:1px solid #dce6f5;border-radius:13px;background:#f7faff;display:grid;gap:6px}.porto-support-login span{color:#6f7f98;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}.porto-support-login a{color:#245fae;font-size:12px;font-weight:600;text-decoration:none;word-break:break-word}.porto-support-login a:hover{text-decoration:underline}.commercial-card .porto-support-login+.commercial-footer{padding-top:24px}.porto-support-settings{grid-column:1/-1}.porto-support-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.porto-support-links a{display:flex;flex-direction:column;gap:5px;padding:16px;border:1px solid #dbe5f3;border-radius:13px;background:#f7faff;color:#245fae;text-decoration:none}.porto-support-links a:hover{border-color:#7aaff7;background:#eef6ff}.porto-support-links span{color:#78889f;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}.porto-support-links b{font-size:14px;word-break:break-word}.dark-ui .porto-support-login,.dark-ui .porto-support-links a{background:#14233d;border-color:#2a4268}.dark-ui .porto-support-login a,.dark-ui .porto-support-links a{color:#80b9ff}
+@media(max-width:1100px){.commercial-shell{grid-template-columns:1.2fr .8fr}.commercial-hero{padding:42px 36px}.commercial-copy h1{font-size:42px}.commercial-modules{grid-template-columns:repeat(2,1fr)}.commercial-card{padding:58px 38px 34px}}
+@media(max-width:760px){.commercial-login{padding:0}.commercial-shell{border:0}.commercial-hero{display:none}.commercial-card{min-height:100vh;padding:38px 24px}.commercial-card .mobile-brand{display:flex}.commercial-slogan{display:none}.commercial-card .eyebrow{margin-top:20px}.commercial-footer{padding-top:24px}.porto-support-links{grid-template-columns:1fr}}
+
+
+/* Busca de produtos no orçamento */
+.quote-product #qProductSearch{margin-bottom:6px}.quote-product #qProductSearchHint{display:block;margin-top:5px;font-size:12px;line-height:1.4}.quote-product{min-width:0}
+
+/* Porto Prime 4.1.5 — Busca de produto integrada no orçamento */
+.quote-product-picker{position:relative}.quote-product-picker #qProductSearch{margin-bottom:0}.quote-product-suggestions{display:none;position:absolute;left:0;right:0;top:calc(100% + 5px);z-index:45;background:#fff;border:1px solid #b9cbe0;border-radius:10px;box-shadow:0 16px 35px rgba(15,55,95,.16);max-height:280px;overflow:auto}.quote-product-option{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;border:0;border-bottom:1px solid #e5ebf2;border-radius:0;background:#fff;padding:10px 12px;color:#173f70}.quote-product-option:last-child{border-bottom:0}.quote-product-option:hover{background:#eef6ff}.quote-product-option span{min-width:0}.quote-product-option b,.quote-product-option small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.quote-product-option small{margin-top:3px;color:#718096;font-size:11px}.quote-product-option strong{white-space:nowrap;color:#1258b5}.quote-product-empty{padding:14px;color:#718096;font-size:12px;background:#fff}.dark-ui .quote-product-suggestions{background:#111827;border-color:#475569}.dark-ui .quote-product-option{background:#111827;color:#e5efff;border-color:#334155}.dark-ui .quote-product-option:hover{background:#172554}.dark-ui .quote-product-option small,.dark-ui .quote-product-empty{color:#94a3b8}.dark-ui .quote-product-empty{background:#111827}
+
+
+.quote-product-option.is-active,.quote-product-option.is-active:hover{background:#dbeafe;box-shadow:inset 3px 0 #235bd5}.dark-ui .quote-product-option.is-active,.dark-ui .quote-product-option.is-active:hover{background:#1d4ed8;color:white}
+
+/* Porto Prime 4.1.7 — Sugestões legíveis no orçamento */
+.quote-product-suggestions .quote-product-option{height:auto;min-height:68px;box-sizing:border-box;align-items:center;line-height:1.3;padding:10px 12px;white-space:normal}
+.quote-product-suggestions .quote-product-option span{flex:1;min-width:0}
+.quote-product-suggestions .quote-product-option b,.quote-product-suggestions .quote-product-option small{overflow:visible;white-space:normal;text-overflow:clip;word-break:break-word}
+.quote-product-suggestions .quote-product-option small{line-height:1.35}
+.quote-product-suggestions .quote-product-option strong{flex:none;margin-left:8px}
+.quote-product-suggestions{width:min(720px,calc(100vw - 48px));right:auto;max-height:min(380px,55vh);background:rgba(248,251,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(142,173,212,.7);box-shadow:0 18px 36px rgba(15,55,95,.2)}
+.quote-product-suggestions .quote-product-option{background:rgba(255,255,255,.8);padding:12px 15px}
+.quote-product-suggestions .quote-product-option:hover,.quote-product-suggestions .quote-product-option.is-active{background:rgba(219,234,254,.95)}
+.dark-ui .quote-product-suggestions{background:rgba(17,24,39,.94)}
+.dark-ui .quote-product-suggestions .quote-product-option{background:rgba(17,24,39,.8)}
+.dark-ui .quote-product-suggestions .quote-product-option:hover,.dark-ui .quote-product-suggestions .quote-product-option.is-active{background:rgba(29,78,216,.9)}
+
+/* Porto Prime 4.1.9 — PDV de operação rápida */
+.legacy-pdv{gap:12px;padding:16px;background:#f2f6fc}
+.legacy-pdv .legacy-cash{order:-1;min-height:54px;border-radius:11px;background:#173f85;box-shadow:0 6px 16px #173f8515}
+.legacy-pdv .legacy-cash b{font-size:21px}.legacy-pdv .legacy-cash strong{font-size:17px}
+.legacy-pdv .legacy-top{padding:5px 9px}.legacy-pdv .legacy-top b{font-size:23px}
+.legacy-pdv .legacy-searchbar{display:flex;flex-direction:column;align-items:stretch;gap:9px;padding:13px 16px;background:#174187;border-radius:13px}
+.legacy-pdv .legacy-shortcuts-top{order:-1;display:flex;flex-direction:row;gap:6px;flex-wrap:wrap;width:100%;min-width:0}
+.legacy-pdv .legacy-shortcuts-top span{padding:8px 9px;border:1px solid #ffffff45;background:#ffffff16;border-radius:7px;color:#fff;font-size:11px;font-weight:800}
+.legacy-pdv .legacy-searchbar label{font-size:13px}.legacy-pdv .legacy-searchbar input{height:56px;border-radius:9px;font-size:20px}
+.legacy-pdv .legacy-searchbar .pdv-results{top:calc(100% + 4px);left:16px;right:auto;width:min(970px,calc(100% - 32px));max-width:none;max-height:350px;border-radius:10px;box-shadow:0 20px 45px #122b5460}
+.legacy-pdv .legacy-searchbar .pdv-results .result{width:100%;height:auto;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;white-space:normal;line-height:1.4;cursor:pointer}
+.legacy-pdv .legacy-searchbar .pdv-results .result>span{min-width:0;overflow-wrap:anywhere}.legacy-pdv .legacy-searchbar .pdv-results .result>.price{white-space:nowrap}
+.legacy-pdv .legacy-main{display:flex;flex-direction:column;min-height:0;gap:11px}
+.legacy-pdv .legacy-left{display:flex;align-items:stretch;gap:15px;padding:14px;border-radius:12px;min-height:116px;border-color:#d4e1f2}
+.legacy-pdv .legacy-product-image{flex:0 0 210px;min-height:96px;padding:8px;background:#f4f8ff}.legacy-pdv .legacy-product-image .cart-symbol{font-size:26px}.legacy-pdv .legacy-product-image b{margin-top:4px;font-size:13px}.legacy-pdv .legacy-product-image small{font-size:10px}
+.legacy-pdv .legacy-fields{flex:1;min-width:0;display:grid;grid-template-columns:120px minmax(125px,.8fr) minmax(150px,1fr) minmax(150px,1fr);align-items:center;gap:12px}
+.legacy-pdv .legacy-fields input{height:47px;text-align:left;font-size:18px;border-radius:8px;padding:0 10px}
+.legacy-pdv .legacy-client-row{grid-template-columns:minmax(190px,2fr) minmax(150px,1.2fr) minmax(135px,1fr) auto auto auto;gap:10px;padding:13px;border-radius:12px;border-color:#d4e1f2}
+.legacy-pdv .legacy-client-row label{font-size:12px}.legacy-pdv .legacy-client-row select,.legacy-pdv .legacy-client-row input{height:44px;border-radius:8px}
+.legacy-pdv .legacy-client-row button{height:44px;white-space:nowrap}
+.legacy-pdv .pdv-discount-info{min-width:100px}
+.legacy-pdv .legacy-items{min-height:170px;max-height:390px;border-radius:12px;border-color:#d4e1f2}
+.legacy-pdv .legacy-items table{width:100%;table-layout:fixed;border-collapse:collapse}
+.legacy-pdv .legacy-items th,.legacy-pdv .legacy-items td{display:table-cell;box-sizing:border-box;vertical-align:middle;padding:13px 9px;overflow-wrap:anywhere;white-space:normal}
+.legacy-pdv .legacy-items th:nth-child(1){width:55px}.legacy-pdv .legacy-items th:nth-child(2){width:105px}.legacy-pdv .legacy-items th:nth-child(4){width:85px}.legacy-pdv .legacy-items th:nth-child(5){width:125px}.legacy-pdv .legacy-items th:nth-child(6){width:130px}.legacy-pdv .legacy-items th:nth-child(7){width:44px}
+.legacy-pdv .legacy-items td:nth-child(4),.legacy-pdv .legacy-items td:nth-child(5),.legacy-pdv .legacy-items td:nth-child(6){white-space:nowrap}
+.legacy-pdv .legacy-items td small{margin-top:3px}
+.legacy-pdv .legacy-items .pdv-cart-row{display:table-row;cursor:pointer}.legacy-pdv .legacy-items .pdv-cart-row.selected td{background:#edf5ff}.legacy-pdv .legacy-items .pdv-cart-row:hover td{background:#f4f8ff}
+.legacy-pdv .legacy-paybox{border-radius:12px;padding:13px}.legacy-pdv .legacy-subtotal{border-radius:9px}
+.legacy-pdv :is(input,select,button):focus-visible{outline:3px solid #438fff;outline-offset:2px}
+.dark-ui .legacy-pdv{background:#111827}.dark-ui .legacy-product-image{background:#202a3d}.dark-ui .legacy-items .pdv-cart-row.selected td{background:#173769}
+@media(max-width:1250px){.legacy-pdv .legacy-client-row{grid-template-columns:2fr 1fr 1fr}.legacy-pdv .legacy-fields{grid-template-columns:repeat(4,minmax(100px,1fr))}.legacy-pdv .legacy-items{overflow-x:auto}.legacy-pdv .legacy-items table{min-width:750px}}
+@media(max-width:800px){.legacy-pdv .legacy-left{display:block}.legacy-pdv .legacy-product-image{display:none}.legacy-pdv .legacy-fields{grid-template-columns:repeat(2,minmax(120px,1fr))}.legacy-pdv .legacy-client-row{grid-template-columns:repeat(2,minmax(140px,1fr))}.legacy-pdv .legacy-shortcuts-top{display:none}}
+/* Alinha os campos da venda na ordem de operação aprovada */
+@media(min-width:1251px){
+  .legacy-pdv .legacy-main{display:grid;grid-template-columns:120px 140px 180px minmax(230px,2fr) 178px 135px 120px;gap:12px;align-items:end;background:#fff;border:1px solid #d4e1f2;border-radius:12px;padding:16px}
+  .legacy-pdv .legacy-left,.legacy-pdv .legacy-fields,.legacy-pdv .legacy-client-row{display:contents}
+  .legacy-pdv .legacy-product-image,.legacy-pdv .legacy-fields label:nth-child(4),.legacy-pdv .legacy-client-row button{display:none}
+  .legacy-pdv .legacy-fields label,.legacy-pdv .legacy-client-row label{min-width:0;font-size:12px;font-weight:800}
+  .legacy-pdv .legacy-fields input,.legacy-pdv .legacy-client-row select,.legacy-pdv .legacy-client-row input{width:100%;height:48px;margin-top:6px;font-size:16px}
+  .legacy-pdv .legacy-items{grid-column:1/-1;max-height:420px;margin-top:12px}
+  .legacy-pdv .pdv-discount-info{align-self:end;min-height:48px;display:flex;flex-direction:column;justify-content:center}
+}
+@media(max-width:1250px){.legacy-pdv .legacy-main{display:flex;flex-direction:column}.legacy-pdv .legacy-left{display:flex}.legacy-pdv .legacy-client-row{display:grid}.legacy-pdv .legacy-items{width:100%}}
+@media(min-width:1251px){
+  .legacy-pdv .legacy-main{align-items:stretch}
+  .legacy-pdv .legacy-items{grid-column:1/5;grid-row:2/4;min-height:325px;max-height:480px;margin-top:10px}
+  .legacy-pdv .legacy-actions{grid-column:5/-1;grid-row:2;display:block;margin-top:10px;background:#173f85;border-radius:12px 12px 0 0;padding:18px 20px 0;color:#fff}
+  .legacy-pdv .legacy-actions>button{display:none}
+  .legacy-pdv .legacy-subtotal{padding:10px 0;background:transparent;border-top:1px solid #ffffff55;border-radius:0}
+  .legacy-pdv .legacy-subtotal strong{font-size:31px}
+  .legacy-pdv .legacy-paybox{grid-column:5/-1;grid-row:3;display:flex;flex-direction:column;align-items:stretch;gap:12px;background:#173f85;color:#fff;border:0;border-radius:0 0 12px 12px;padding:12px 20px 19px}
+  .legacy-pdv .legacy-paybox .pdv-payrow select,.legacy-pdv .legacy-paybox .pdv-payrow input{min-width:0}
+  .legacy-pdv .legacy-paybox .legacy-finish{width:100%;min-height:61px}
+}
+@media(max-width:1250px){
+  .legacy-pdv .legacy-actions{width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .legacy-pdv .legacy-subtotal{grid-column:1/-1}
+  .legacy-pdv .legacy-paybox{width:100%}
+}
+
+/* Porto Prime 4.1.10 — Atalhos compactos e cliente antes da busca */
+.legacy-pdv>.legacy-shortcuts-top{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;width:100%;min-width:0;padding:10px 12px;background:#194486;border-radius:12px}
+.legacy-pdv>.legacy-shortcuts-top button{min-width:0;height:58px;display:grid;grid-template-columns:25px 1fr;grid-template-rows:19px 20px;align-content:center;gap:1px 5px;padding:6px 7px;border:1px solid #ffffff58;border-radius:8px;background:#ffffff13;color:#fff;text-align:left;cursor:pointer}
+.legacy-pdv>.legacy-shortcuts-top button:hover,.legacy-pdv>.legacy-shortcuts-top button:focus-visible{background:#ffffff2a}
+.legacy-pdv>.legacy-shortcuts-top button span{grid-row:1/3;align-self:center;font-size:22px;line-height:1;text-align:center}
+.legacy-pdv>.legacy-shortcuts-top button b{font-size:11px;line-height:1}.legacy-pdv>.legacy-shortcuts-top button small{font-size:11px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.legacy-pdv>.pdv-customer-top{display:flex;flex-direction:column;gap:4px;padding:12px 15px;background:#fff;border:1px solid #d3e1f2;border-radius:11px}
+.legacy-pdv>.pdv-customer-top label{font-size:12px;font-weight:850;color:#3d5d87}
+.legacy-pdv>.pdv-customer-top select{height:47px;width:100%;border-radius:8px;font-size:16px;font-weight:750}
+.legacy-pdv>.pdv-customer-top small{color:#647c9b;font-size:11px}
+@media(min-width:1251px){
+  .legacy-pdv .legacy-main{grid-template-columns:120px 140px 180px minmax(150px,1fr) 160px minmax(120px,1fr)}
+  .legacy-pdv .legacy-items{grid-column:1/5}
+  .legacy-pdv .legacy-actions,.legacy-pdv .legacy-paybox{grid-column:5/-1}
+}
+@media(max-width:1150px){.legacy-pdv>.legacy-shortcuts-top{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:700px){.legacy-pdv>.legacy-shortcuts-top{grid-template-columns:repeat(3,minmax(0,1fr))}.legacy-pdv>.legacy-shortcuts-top button{height:50px}}
+.dark-ui .legacy-pdv>.pdv-customer-top{background:#172033;border-color:#344054}.dark-ui .legacy-pdv>.pdv-customer-top label{color:#cbd5e1}
+.legacy-pdv>.legacy-shortcuts-top button span{display:flex;align-items:center;justify-content:center}
+.legacy-pdv>.legacy-shortcuts-top button svg{display:block}
+
+/* Porto Prime 4.1.11 — manter atalhos e cliente antes da busca no layout flex do PDV. */
+.legacy-pdv>.legacy-shortcuts-top,.legacy-pdv>.pdv-customer-top{order:-98!important}
+
+/* Porto Prime 4.1.13 - Relatórios Gerenciais Prime */
+.ger-prime{display:grid;gap:14px}.ger-prime-head{display:flex;justify-content:space-between;align-items:center;padding:6px 2px}.ger-prime-head h2{font-size:28px;margin:4px 0}.ger-prime-head p{margin:0;color:var(--muted)}.ger-head-actions{display:flex;gap:8px}.ger-head-actions button{display:grid;place-items:center;gap:2px;min-width:72px;padding:9px}.ger-head-actions button:first-letter{font-size:20px}.ger-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.ger-tabs button{padding:15px;font-weight:800;background:#fff;border:1px solid #d8e1ec}.ger-tabs button.active{background:#1688f8;color:#fff;border-color:#1688f8}.ger-prime-filters{display:flex;align-items:end;gap:12px}.ger-date-pair{display:flex;align-items:center;gap:8px}.ger-date-pair input{min-width:145px}.ger-presets{display:flex;gap:7px;flex:1}.ger-presets button{flex:1;white-space:nowrap}.ger-presets .active{background:#1688f8;color:#fff}.ger-kpis-prime{display:grid;grid-template-columns:repeat(7,minmax(130px,1fr));gap:10px}.ger-kpis-prime .card{color:#fff;border:0;min-height:104px}.ger-kpis-prime .card small,.ger-kpis-prime .card span{color:rgba(255,255,255,.9)}.ger-kpis-prime .card strong{color:#fff}.ger-kpis-prime .blue{background:linear-gradient(135deg,#087cf1,#1598ff)}.ger-kpis-prime .green{background:linear-gradient(135deg,#0cab5d,#21c875)}.ger-kpis-prime .orange{background:linear-gradient(135deg,#ff8517,#ffa12c)}.ger-kpis-prime .purple{background:linear-gradient(135deg,#7744dc,#9d58f1)}.ger-kpis-prime .red{background:linear-gradient(135deg,#e83d52,#fa6273)}.ger-kpis-prime .slate{background:linear-gradient(135deg,#506b80,#7890a1)}.ger-kpis-prime .teal{background:linear-gradient(135deg,#009c9d,#13bcbc)}.ger-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.ger-month-bars{height:210px;display:flex;align-items:end;gap:9px;padding:28px 5px 0}.ger-month-bars>div{flex:1;height:100%;display:flex;flex-direction:column;justify-content:end;align-items:center;min-width:0}.ger-month-bars i{display:block;width:70%;background:linear-gradient(#2a9af8,#0878df);border-radius:5px 5px 0 0}.ger-month-bars b{font-size:10px;margin-bottom:4px;white-space:nowrap}.ger-month-bars small{margin-top:5px}.ger-donut-wrap{display:flex;align-items:center;justify-content:center;gap:25px;min-height:210px}.ger-donut{width:155px;height:155px;border-radius:50%;display:grid;place-items:center;flex:none}.ger-donut>div{width:88px;height:88px;border-radius:50%;background:#fff;display:grid;place-content:center;text-align:center}.ger-donut b{font-size:15px}.ger-donut small{color:var(--muted)}.ger-legend{display:grid;gap:8px;min-width:180px}.ger-legend span{display:grid;grid-template-columns:10px 1fr auto;gap:7px;align-items:center}.ger-legend i{width:10px;height:10px;border-radius:3px}.ger-legend em{font-style:normal;font-size:12px}.ger-legend b{font-size:12px}.ger-rank{display:flex;justify-content:space-between;gap:12px;padding:11px 4px;border-bottom:1px solid #edf1f5}.ger-rank span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ger-rank b{white-space:nowrap}.ger-period{font-size:12px;color:var(--muted);text-align:right}.ger-backup{margin-top:4px}[data-ger-panel].hidden{display:none!important}@media(max-width:1200px){.ger-kpis-prime{grid-template-columns:repeat(4,1fr)}.ger-grid3{grid-template-columns:1fr}.ger-prime-filters{flex-wrap:wrap}.ger-presets{min-width:100%}}
+/* build-trigger-4.1.13: teste corrigido e recompilação */
+
+/* Porto Prime 4.1.14 - correção da validação de período dos relatórios */
+
+/* Porto Prime 4.1.15 - correção SQL dos relatórios gerenciais */
+
+
+/* Porto Prime 4.3.0 - Inteligência de Estoque e Curva ABC */
+.stock-intel-hero{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:24px;margin-bottom:20px;border-radius:20px;background:linear-gradient(135deg,#0f172a,#172554 52%,#1d4ed8);color:#fff;box-shadow:0 18px 40px #0f172a24}
+.stock-intel-hero h2{margin:5px 0 7px;font-size:28px}.stock-intel-hero p{margin:0;color:#dbeafe;max-width:760px}.stock-intel-period{min-width:190px;background:#ffffff12;border:1px solid #ffffff22;padding:12px;border-radius:14px}.stock-intel-period label{color:#dbeafe;margin-top:0}.stock-intel-period select{background:#fff}
+.stock-intel-kpis .card:nth-child(5):before{background:#ef4444}.stock-intel-kpis .card:nth-child(6):before{background:#f59e0b}
+.abc-card{position:relative;overflow:hidden}.abc-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px}.abc-panel-A:before{background:#16a34a}.abc-panel-B:before{background:#2563eb}.abc-panel-C:before{background:#f59e0b}
+.abc-badge{display:inline-grid;place-items:center;min-width:28px;height:25px;padding:0 8px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.08em}.abc-A{background:#dcfce7;color:#15803d}.abc-B{background:#dbeafe;color:#1d4ed8}.abc-C{background:#fef3c7;color:#b45309}
+.abc-revenue{font-size:26px;font-weight:900;letter-spacing:-.04em;margin:6px 0 3px}.stock-intel-tabs{display:flex;gap:5px}
+.dark-ui .stock-intel-period select{background:#172033;color:#e5e7eb}
+@media(max-width:900px){.stock-intel-hero{align-items:flex-start;flex-direction:column}.stock-intel-period{width:100%}}
+
+
+/* Porto Prime 4.4.0 - Metas e Comissões */
+.seller-goal-hero{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:24px;margin-bottom:20px;border-radius:20px;background:linear-gradient(135deg,#111827,#172554 55%,#2563eb);color:#fff;box-shadow:0 18px 40px #0f172a24}
+.seller-goal-hero h2{margin:5px 0 7px;font-size:28px}.seller-goal-hero p{margin:0;color:#dbeafe;max-width:720px}.seller-month-box{min-width:210px;background:#ffffff12;border:1px solid #ffffff22;padding:12px;border-radius:14px}.seller-month-box label{color:#dbeafe;margin-top:0}.seller-month-box input{background:#fff}
+.seller-goal-kpis .card:nth-child(4):before{background:#2563eb}.seller-goal-kpis .card:nth-child(5):before{background:#16a34a}.seller-goal-kpis .card:nth-child(6):before{background:#f59e0b}
+.goal-progress{width:150px;max-width:100%;height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-bottom:5px}.goal-progress span{display:block;height:100%;border-radius:999px}.goal-low{background:#ef4444}.goal-mid{background:#f59e0b}.goal-near{background:#3b82f6}.goal-done{background:#16a34a}
+.seller-goal-table td{vertical-align:middle}.dark-ui .seller-month-box input{background:#172033;color:#e5e7eb}.dark-ui .goal-progress{background:#334155}
+@media(max-width:900px){.seller-goal-hero{align-items:flex-start;flex-direction:column}.seller-month-box{width:100%}}
+
+.password-recovery-box{margin-top:12px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#f8fafc}.password-recovery-box.hidden{display:none}.password-recovery-box .alert{margin-top:0}.login-recovery-btn{margin-top:10px}.dark-ui .password-recovery-box{background:#111827}
+
+
+/* Porto Prime — tema azul fosco minimalista (proposta 4.4.9) */
+:root{
+  --bg:#f1f3f6;
+  --panel:#ffffff;
+  --text:#202c3b;
+  --muted:#687588;
+  --line:#dfe4eb;
+  --primary:#294a70;
+  --primary2:#203b5b;
+  --soft:#e8eef5;
+  --green:#278064;
+  --red:#b94b50;
+  --amber:#a96f22;
+  --nav:#172b46;
+  --nav2:#203853;
+  --shadow:0 2px 10px rgba(24,42,64,.06);
+}
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;letter-spacing:0}
+button,input,select,textarea{font-family:Inter,"Segoe UI",Arial,sans-serif;letter-spacing:0}
+button,.primary,.secondary,.login-btn{box-shadow:none!important;text-shadow:none!important;filter:none}
+.primary,.login-btn,.hero-mark,.logo{background:var(--primary)!important;background-image:none!important;color:#fff!important;box-shadow:none!important}
+.primary:hover,.login-btn:hover{background:var(--primary2)!important}
+.secondary{background:#fff!important;color:var(--primary)!important;border:1px solid var(--line)!important}
+.login-wrap{background:linear-gradient(135deg,#172b46,#243e5d)!important}
+.login-shell{border-radius:16px;box-shadow:0 12px 36px rgba(14,28,46,.14)}
+.login-hero{background:#203853!important;background-image:none!important}
+.hero-mark,.logo{border-radius:12px}
+.eyebrow{color:#829bb8}
+.login-hero p{color:#d9e1eb}
+.hero-points span{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+input,select,textarea{border-color:var(--line)}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(41,74,112,.15);border-color:var(--primary)}
+button{transition:background-color .15s ease,border-color .15s ease}
+.card,.panel,.modal,.stat-card,.dashboard-card{box-shadow:var(--shadow)}
+
+
+/* Porto Prime — refinamento visual global: azul fosco, sem brilho ou gradientes */
+:root{
+ --bg:#eef1f5;--panel:#fff;--text:#263447;--muted:#718096;--line:#dce3eb;
+ --primary:#385779;--primary2:#2c4663;--soft:#e9eef4;--nav:#1c2d42;--nav2:#263b53;
+ --green:#3d7968;--red:#a95159;--amber:#98733e;--shadow:0 2px 8px rgba(31,48,68,.055);
+}
+html,body{background:var(--bg)!important;color:var(--text)!important}
+body{font-family:"Segoe UI",Inter,Arial,sans-serif!important;letter-spacing:0!important}
+h1,h2,h3,h4,h5,h6,strong,b,button,label,th{ text-shadow:none!important;filter:none!important}
+button,.btn,.primary,.secondary,.danger-btn,.success-btn,.warning-btn,.login-btn,
+[role=button],input,select,textarea{ text-shadow:none!important;filter:none!important;box-shadow:none!important}
+button,.btn,.primary,.secondary,.danger-btn,.success-btn,.warning-btn,[role=button]{
+ background-image:none!important;transition:background-color .14s ease,border-color .14s ease!important
+}
+#shell aside,aside,.sidebar,.app-sidebar,.nav-sidebar{background:var(--nav)!important;background-image:none!important;box-shadow:none!important}
+#shell aside nav button,#shell aside nav a,aside nav button,aside nav a,.sidebar nav a,.sidebar nav button{
+ background-image:none!important;box-shadow:none!important;text-shadow:none!important
+}
+#shell aside nav button.active,#shell aside nav a.active,aside nav button.active,aside nav a.active,
+.sidebar nav .active,.sidebar .active{
+ background:#314c6b!important;color:#fff!important;border-color:transparent!important
+}
+#shell main,main,#app,.content,.main-content{background:var(--bg)!important}
+header,.topbar,.app-header{background:#fff!important;background-image:none!important;border-bottom:1px solid var(--line)!important;box-shadow:none!important}
+.card,.panel,.modal,.modal-content,.stat-card,.dashboard-card,.table-wrap,.form-card,.settings-card,
+.ger-prime .card,.alert-card,.widget,.report-card{
+ background:var(--panel)!important;background-image:none!important;color:var(--text)!important;
+ border:1px solid var(--line)!important;box-shadow:var(--shadow)!important;border-radius:13px!important
+}
+h1,h2,h3,h4,.page-head h2,.section-title{color:var(--text)!important}
+p,small,.muted,.subtitle{ text-shadow:none!important}
+.primary,.login-btn,.hero-mark,.logo,.version-chip,.user-chip{
+ background:var(--primary)!important;background-image:none!important;color:#fff!important;border-color:transparent!important
+}
+.primary:hover,.login-btn:hover,.primary:focus-visible{background:var(--primary2)!important}
+.secondary,.logout-btn,.iconbtn{background:#fff!important;color:var(--primary)!important;border:1px solid var(--line)!important}
+.secondary:hover,.logout-btn:hover,.iconbtn:hover{background:var(--soft)!important}
+input,select,textarea,.search input{
+ background:#fbfcfd!important;color:var(--text)!important;border:1px solid var(--line)!important;
+ border-radius:8px!important;box-shadow:none!important
+}
+input:focus,select:focus,textarea:focus{outline:2px solid #38577920!important;border-color:#7890aa!important}
+a{ text-shadow:none!important}
+a:not(.primary):not(.btn){color:#385779}
+.badge,.chip,.pill,.tag{box-shadow:none!important;text-shadow:none!important}
+.success,.text-success,.green,.positive{color:#3d7968!important}
+.danger,.text-danger,.red,.negative{color:#a95159!important}
+.warning,.text-warning,.orange{color:#98733e!important}
+.alert,.notice,.toast,.status-banner{box-shadow:none!important;text-shadow:none!important}
+.progress,.progress-bar,.bar,.chart-bar{box-shadow:none!important}
+.login-wrap{background:#e9edf2!important;background-image:none!important}
+.login-shell{box-shadow:0 8px 24px rgba(31,48,68,.10)!important;border:1px solid #dce3eb!important}
+.login-hero,.commercial-hero,.login-card{background-image:none!important}
+.login-hero,.commercial-hero{background:#20364e!important;color:#fff!important}
+.login-card,.commercial-card{background:#fff!important;color:var(--text)!important}
+.hero-points span,.commercial-modules span{box-shadow:none!important}
+.hero-points span{background:#2a4057!important;border-color:#526478!important}
+#app .hero,#app [class*="-hero"],#app .dashboard-hero,#app .welcome-banner,
+#app .stock-intel-hero,#app .seller-goal-hero,#app .ger-prime-hero{
+ background:#e4eaf1!important;background-image:none!important;color:#263447!important;
+ border:1px solid #d6dfe9!important;box-shadow:none!important;border-radius:14px!important
+}
+#app .hero p,#app [class*="-hero"] p,#app .dashboard-hero p,#app .welcome-banner p{color:#65758a!important}
+#app .hero h1,#app .hero h2,#app [class*="-hero"] h1,#app [class*="-hero"] h2{color:#263447!important}
+#app .hero .primary,#app [class*="-hero"] .primary{background:#385779!important;color:#fff!important}
+.ger-kpis-prime .card,.ger-kpis-prime .card.blue,.ger-kpis-prime .card.green,
+.ger-kpis-prime .card.orange,.ger-kpis-prime .card.purple,.ger-kpis-prime .card.red,
+.ger-kpis-prime .card.slate,.ger-kpis-prime .card.teal{
+ background:#f7f9fb!important;background-image:none!important;color:var(--text)!important;
+ border:1px solid var(--line)!important
+}
+.ger-kpis-prime .card small,.ger-kpis-prime .card span,.ger-kpis-prime .card strong{color:var(--text)!important}
+.ger-month-bars i{background:#7890aa!important}
+.ger-tabs button.active,.ger-presets .active{background:#385779!important;border-color:#385779!important;color:#fff!important}
+.stock-intel-hero,.seller-goal-hero{background:#e4eaf1!important;color:var(--text)!important;box-shadow:none!important}
+.stock-intel-hero p,.seller-goal-hero p{color:#65758a!important}
+.stock-intel-period,.seller-month-box{background:#f7f9fb!important;border:1px solid var(--line)!important}
+.legacy-pdv>.legacy-shortcuts-top,.legacy-pdv .legacy-actions,.legacy-pdv .legacy-paybox{
+ background:#e6ebf1!important;background-image:none!important;color:var(--text)!important;border:1px solid var(--line)!important;box-shadow:none!important
+}
+.legacy-pdv>.legacy-shortcuts-top button{background:#f8fafc!important;color:var(--text)!important;border:1px solid var(--line)!important}
+.legacy-pdv>.legacy-shortcuts-top button small{color:var(--muted)!important}
+.legacy-pdv .legacy-paybox,.legacy-pdv .legacy-paybox *{text-shadow:none!important}
+.legacy-pdv .legacy-subtotal{color:var(--text)!important}
+.dark-ui{--bg:#171f2b;--panel:#202b39;--text:#e0e7ef;--muted:#a2afbf;--line:#354354;--primary:#58799d;--primary2:#456584;--soft:#29394b;--nav:#131e2b;--nav2:#1c2d40;--shadow:none}
+.dark-ui html,.dark-ui body,.dark-ui #shell main,.dark-ui main,.dark-ui #app,.dark-ui .content,.dark-ui .main-content{background:var(--bg)!important;color:var(--text)!important}
+.dark-ui .card,.dark-ui .panel,.dark-ui .modal,.dark-ui .modal-content,.dark-ui .stat-card,.dark-ui .dashboard-card,
+.dark-ui .table-wrap,.dark-ui .form-card,.dark-ui .settings-card{background:var(--panel)!important;color:var(--text)!important;border-color:var(--line)!important}
+.dark-ui header,.dark-ui .topbar,.dark-ui .app-header{background:#202b39!important;border-color:var(--line)!important}
+.dark-ui input,.dark-ui select,.dark-ui textarea,.dark-ui .search input{background:#182230!important;color:var(--text)!important;border-color:var(--line)!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+
+/* Login: restaurar contraste do título "Gestão inteligente" */
+.commercial-copy h1{color:#e7edf5!important;text-shadow:none!important;filter:none!important}
+.commercial-copy h1 b{color:#3991f5!important;text-shadow:none!important;filter:none!important}
+
+/* Imagem única no cadastro de produto — tema minimalista */
+.product-image-area{grid-column:1/-1;border:1px solid var(--line,#d8e1ec);border-radius:12px;padding:14px;background:var(--panel-soft,#f8fafc);margin:2px 0 8px}.product-image-controls{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.product-image-preview{width:124px;height:112px;border:1px dashed #b9c8d9;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#64748b;font-size:12px}.product-image-preview img{width:100%;height:100%;object-fit:contain}.product-image-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px}.product-image-actions small{font-size:11px}

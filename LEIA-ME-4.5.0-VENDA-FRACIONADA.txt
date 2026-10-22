@@ -1,0 +1,11 @@
+# ATUALIZAÇÃO 4.5.0 • VENDA FRACIONADA E UNIDADES FLEXÍVEIS
+Data: Outubro de 2026
+
+Principais melhorias aplicadas:
+1. **PDV com Suporte a Quantidades Decimais e Frações**:
+   - Ajuste completo nos inputs de quantidade para aceitar frações (ex: 1.5 metros de cabo, 0.750 kg de pregos, 2.25 m² de piso).
+   - Atalhos rápidos no teclado do PDV para somar/subtrair frações (0.5, 0.1, etc.).
+2. **Exibição Clara de Unidades**:
+   - O carrinho e as listagens de produtos agora mostram dinamicamente a unidade de medida cadastrada (UN, MT, KG, M2, L).
+3. **Baixa Precisa no Estoque**:
+   - Garantia de que a baixa na tabela `stock_movements` e `products` processe números decimais (`NUMERIC(14,3)`), evitando furos de inventário em materiais cortados ou pesados.
